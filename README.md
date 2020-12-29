@@ -1,0 +1,1 @@
+This repository aims to implement a predictive model for fantasy football.
