@@ -11,5 +11,9 @@ import player_scrape
 player = input("Player name (e.g. Russell Wilson): ")
 year = input("Year (default is latest season): ") or datetime.today().year-1
 
-df = player_scrape.create_player_df(player, year)
-print(df)
+# df = player_scrape.create_player_df(player, year)
+# print(df)
+
+# read from the scraped csv instead of straight from the website
+df = pd.read_csv('fantasy2019.csv')
+
