@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 url = 'https://www.pro-football-reference.com/'
-year = datetime.today().year-1
+year = datetime.today().year-1 if datetime.today().month >= 2 else datetime.today().year-2
 max_players = 300
 
 r = get(url + '/years/' + str(year) + '/fantasy.htm')
@@ -50,5 +50,5 @@ for i, row in enumerate(parsed_table.find_all('tr')[2:]):
 df = pd.concat(df)
 df.head()
 
-df.to_csv('fantasy2019.csv')
+df.to_csv(f'fantasy{year}.csv')
 
