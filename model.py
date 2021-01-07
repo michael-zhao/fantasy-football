@@ -17,3 +17,6 @@ year = input("Year (default is latest season): ") or datetime.today().year-1
 # read from the scraped csv instead of straight from the website
 df = pd.read_csv('fantasy2019.csv')
 
+# drop the game #, date, team, away (W/L), and season (all 2019)
+df.drop(['G#', 'Date', 'Tm', 'Away', 'Season'])
+
