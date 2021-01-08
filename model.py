@@ -20,3 +20,8 @@ df = pd.read_csv('fantasy2019.csv')
 # drop the game #, date, team, away (W/L), and season (all 2019)
 df.drop(['G#', 'Date', 'Tm', 'Away', 'Season'])
 
+#separate based on position
+rb_df = df[df['Position'] == 'RB']
+qb_df = df[df['Position'] == 'QB']
+wr_df = df[df['Position'] == 'WR']
+te_df = df[df['Position'] == 'TE']
